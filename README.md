@@ -15,3 +15,16 @@ This project is a Node.js server that provides secure authentication using JSON 
 - **POST /url**: Endpoint for creating a short URL. Requires authentication.
 - **GET /url/:surl**: Endpoint for accessing the original URL associated with a short URL. Requires authentication.
 
+## Explanation
+
+-After a user creates an account, User provides a URL to the server to get Shot Url. 
+-The server checks if the user is authorized using a JWT token. If the user is authorized, 
+-The server creates a random short ID, which we'll call it as short URL, and stores it in the database. The short URL is then sent back to the user.
+-When a user wants to access a URL, they provide the short URL to the server through parameters.
+-For example:http://localhost:3000/url/69097
+-Here, 69097 is the short URL. The server receives the short URL and finds the corresponding original URL in the database. 
+-It then redirects the user to the original URL.
+
+
+
+
